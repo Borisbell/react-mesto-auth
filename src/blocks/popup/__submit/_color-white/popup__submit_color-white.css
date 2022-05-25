@@ -1,0 +1,8 @@
+.popup__submit_color-white {
+    background-color: var(--font-color);
+    color: var(--bg-dark-color);
+  }
+  
+  .popup__submit_color-white:hover{
+    opacity: 0.85;
+  }

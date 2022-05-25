@@ -1,11 +1,23 @@
 import logo from '../images/header/logo.svg';
+import { Link } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   return (
     <header className="header">
-      <a href="#" className="header__link">
+      <Link to="signin" className="header__link">
         <img src={logo} alt="Логотип" className="header__logo"/>
-      </a>
+      </Link>
+      {
+        props.loggedIn ?
+        <nav className='header__nav'>
+          <p className="paragraph">{props.userData}</p>
+          <Link to="signin" className="header__nav-link">Выйти</Link>
+        </nav>
+        :
+        <nav className='header__nav'>
+          <Link to="signin" className="header__nav-link">Выйти</Link>
+        </nav>
+      }
     </header>
   );
 }

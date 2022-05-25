@@ -22,7 +22,7 @@ function Main({cards, onCardLike, onCardDelete, onEditProfile, onAddPlace, onEdi
               <button onClick={onEditProfile} aria-label="Редактироавние профиля" type="button" className="profile__info-edit">
               </button>
             </div>
-            <p className="profile__info-job">{currentUser.about}</p>
+            <p className="paragraph">{currentUser.about}</p>
           </div>
         </div>
         <button onClick={onAddPlace} aria-label="Добавить" type="button" className="profile__add-btn">
