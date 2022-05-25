@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import {Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Login from './Login.js';
 import Register from './Register.js';
 import MyProfile from './MyProfile.js';
@@ -13,13 +13,12 @@ const App = () => {
 
   const handleLogin = ({ email, password }) => {
     return auth.authorize(email, password)
-        .then((data) => {
-          console.log(data)
-          if (data.token) {
-            localStorage.setItem('jwt', data.token);
-            tokenCheck();
-          }
-        })
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem('jwt', data.token);
+          tokenCheck();
+        }
+      })
   }
 
   const handleRegister = ({email, password }) => {
@@ -44,10 +43,10 @@ const App = () => {
     }
 
   const signOut = () => {
-      localStorage.removeItem('jwt');
-      setLoggedIn(false);
-      setUserData(null);
-      history.push('/signup');
+    localStorage.removeItem('jwt');
+    setLoggedIn(false);
+    setUserData(null);
+    history.push('/signup');
     }
 
   useEffect(() => {
@@ -56,19 +55,17 @@ const App = () => {
 
   useEffect(() => {
       if (loggedIn) {
-          history.push("/my-profile");
+        history.push('/my-profile');
       }
-  }, [loggedIn]);
+  }, [loggedIn, history]);
 
   return (
       <Switch>
         <ProtectedRoute path="/my-profile" loggedIn={loggedIn}>
-            <MyProfile userData={userData} loggedIn={loggedIn}/>
+            <MyProfile userData={userData} loggedIn={loggedIn} signOut={signOut}/>
         </ProtectedRoute>
         <Route path="/signin">
-          <div className="registerContainer">
             <Login handleLogin={handleLogin} tokenCheck={tokenCheck} loggedIn={loggedIn}/>
-          </div>
         </Route>
         <Route path="/signup">
           <div className="registerContainer">

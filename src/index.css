@@ -8,6 +8,7 @@
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__nav/header__nav.css);
 @import url(./blocks/header/__nav/__nav-link/header__nav-link.css);
+@import url(./blocks/header/__button/header__button.css);
 /* Paragraph */
 @import url(./blocks/paragraph/paragraph.css);
 /* Profile */
@@ -25,7 +26,8 @@
 /* Name */
 @import url(./blocks/name/name.css);
 @import url(./blocks/name/_place/name_place_popup.css);
-@import url(./blocks/name/_color-white/name_color-white.css);
+@import url(./blocks/name/_place_register/name_place_register.css);
+@import url(./blocks/name/_place_tooltip/name_place_tooltip.css);
 /* Elements */
 @import url(./blocks/elements/elements.css);
 @import url(./blocks/card/card.css);
@@ -47,19 +49,24 @@
 @import url(./blocks/popup/_opened/popup_opened.css);
 @import url(./blocks/popup/__container/popup__container.css);
 @import url(./blocks/popup/__container/_type_form/popup__container__type_form.css);
+@import url(./blocks/popup/__container/_type_tooltip/popup__container_type_tooltip.css);
 @import url(./blocks/popup/__close-btn/popup__close-btn.css);
 @import url(./blocks/popup/__fieldset/popup__fieldset.css);
 @import url(./blocks/popup/__input/popup__input.css);
 @import url(./blocks/popup/__input/_type/popup__input_type_error.css);
+@import url(./blocks/popup/__input/_place-register/popup__input_place-register.css);
 @import url(./blocks/popup/__submit/popup__submit.css);
-@import url(./blocks/popup/__submit/_color-white/popup__submit_color-white.css);
+@import url(./blocks/popup/__submit/_place-register/popup__submit_place-register.css);
 @import url(./blocks/popup/__submit/_disabled/popup__submit_disabled.css);
 @import url(./blocks/popup/__zoom-img/popup__zoom-img.css);
 @import url(./blocks/popup/__description/popup__description.css);
 /* Error message */
 @import url(./blocks/error-message/error-message.css);
+/* Error message */
+@import url(./blocks/tooltip/tooltip__image.css);
 /* Register */
 @import url(./blocks/register/register.css);
-
-
+@import url(./blocks/register/__signin/register__signin.css);
+@import url(./blocks/register/__signin-text/register__signin-text.css);
+@import url(./blocks/register/__signin-link/register__signin-link.css);
 

@@ -10,6 +10,12 @@
   border-bottom: solid rgb(84,84,84,0.7) 1px;
 }
 
+@media screen and ( max-width: 768px ) {
+  .header{
+    flex-direction: column;
+  }
+}
+
 @media screen and ( max-width: 500px ) {
   .header{
     padding-top: 28px;

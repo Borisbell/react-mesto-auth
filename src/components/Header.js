@@ -11,11 +11,11 @@ function Header(props) {
         props.loggedIn ?
         <nav className='header__nav'>
           <p className="paragraph">{props.userData}</p>
-          <Link to="signin" className="header__nav-link">Выйти</Link>
+          <button className='header__nav-link header__button' onClick={props.signOut}>Выйти</button>
         </nav>
         :
         <nav className='header__nav'>
-          <Link to="signin" className="header__nav-link">Выйти</Link>
+          <Link to={props.navLink} className="header__nav-link">{props.navText}</Link>
         </nav>
       }
     </header>

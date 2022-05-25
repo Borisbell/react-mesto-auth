@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import InfoTooltip from './InfoTooltip';
 
 const Register = (props) => {
   const [formParams, setFormParams] = useState({
@@ -7,6 +9,8 @@ const Register = (props) => {
     password: ''
   });
   const [message, setMessage] = useState('');
+  const [signupSuccess, setSignupSuccess] = useState(true);
+  const [isToolTipOpen, setIsToolTipOpen] = useState(false);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -21,54 +25,64 @@ const Register = (props) => {
     let { email, password} = formParams;
     props.handleRegister({ email, password })
       .catch(err => {
-        setMessage(err.message);
-      }
-    );
+        setSignupSuccess(false);
+        setMessage(JSON.stringify(err.message));
+      })
+      .finally(() => {
+        setIsToolTipOpen(true)}
+      )
   }
+
+  const handleCloseToolTip = () => {
+    setIsToolTipOpen(false)
+  }
+
+  useEffect(() => {
+    console.log(message);
+  },[message])
 
   return (
     <div className="page">
+      <Header loggedIn={props.loggedIn} navText='Войти' navLink='signin'/>
       <div className="register">
-        <h1 className="name name_color-white">
+        <h2 className="name name_place_register">
           Регистрация
-        </h1>
-        <p className="register__error">
-          {message}
-        </p>
+        </h2>
         <form onSubmit={handleSubmit} className="register__form">
-          <label htmlFor="email">
-            Email:
-          </label>
           <input id="email" 
                  name="email" 
                  type="email" 
                  value={formParams.email} 
                  onChange={handleChange} 
-                 className="popup__input"  
+                 className="popup__input popup__input_place-register"
+                 placeholder="Email"    
                  required
                  />
-          <label htmlFor="password">
-            Пароль:
-          </label>
           <input id="password"  
               name="password" 
               type="password" 
               value={formParams.password} 
               onChange={handleChange}
-              className="popup__input" 
+              className="popup__input popup__input_place-register"
+              placeholder="Пароль" 
               required/>
           <div className="register__button-container">
             <button type="submit" 
-                    className="popup__submit popup__submit_color-white">
+                    className="popup__submit popup__submit_place-register">
                     Зарегистрироваться
             </button>
           </div>
         </form>
         <div className="register__signin">
-          <p>Уже зарегистрированы?</p>
-          <Link to="signin" className="register__login-link">Войти</Link>
+          <p className="register__signin-text">Уже зарегистрированы?</p>
+          <Link to="signin" className="register__signin-text register__signin-link">Войти</Link>
         </div>
       </div>
+      <InfoTooltip isOpen={isToolTipOpen} 
+                   onClose={handleCloseToolTip} 
+                   success={signupSuccess}
+                   message={message}  
+                   />
     </div>
   );
 }

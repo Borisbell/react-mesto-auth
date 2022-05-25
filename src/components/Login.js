@@ -19,7 +19,6 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let { email, password} = formParams;
-    console.log(email, password)
     props.handleLogin({ email, password })
     .catch(err => {
       setMessage(err.message);
@@ -28,42 +27,38 @@ const Login = (props) => {
 
   return(
     <div className="page">
-    <Header loggedIn={props.loggedIn}/>
-      <div className="register">
-      <h1 className="name name_color-white">
-        Вход
-      </h1>
-      <p className="register__error">
-        {message}
-      </p>
-      <form onSubmit={handleSubmit} className="register__form">
-        <label htmlFor="email">
-          Email:
-        </label>
-        <input id="email" 
-              name="email" 
-              type="email" 
-              value={formParams.email} 
-              onChange={handleChange} 
-              className="popup__input" 
-              required
-              />
-        <label htmlFor="password">
-              Пароль:
-        </label>
-        <input id="password"  
-                name="password" 
-                type="password" 
-                value={formParams.password} 
-                onChange={handleChange} 
-                className="popup__input" 
-                required/>
-        <div className="register__button-container">
-          <button type="submit" className="popup__submit popup__submit_color-white">Войти</button>
+      <Header loggedIn={props.loggedIn} navText='Регистрация' navLink='signup'/>
+        <div className="register">
+          <h2 className="name name_place_register">
+            Вход
+          </h2>
+          <form onSubmit={handleSubmit} className="register__form">
+            <input id="email" 
+                  name="email" 
+                  type="email" 
+                  value={formParams.email} 
+                  onChange={handleChange} 
+                  className="popup__input popup__input_place-register"
+                  placeholder="Email"  
+                  required
+                  />
+            <input id="password"  
+                    name="password" 
+                    type="password" 
+                    value={formParams.password} 
+                    onChange={handleChange} 
+                    className="popup__input popup__input_place-register"
+                    placeholder="Пароль"  
+                    required/>
+            <div className="register__button-container">
+              <button type="submit" 
+                      className="popup__submit popup__submit_place-register">
+                      Войти
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-    </div>
+      </div>
   );
 }
 

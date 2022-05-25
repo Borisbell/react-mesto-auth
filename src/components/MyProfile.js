@@ -22,8 +22,6 @@ function MyProfile(props) {
   const [cards, setCards] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
-  console.log(props.userData);
-
   useEffect(() => {
     api.getProfile()
       .then((userInfo) => {
@@ -159,7 +157,7 @@ function MyProfile(props) {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="App">
         <div className="page">
-          <Header loggedIn={props.loggedIn} userData={props.userData}/>
+          <Header loggedIn={props.loggedIn} userData={props.userData} navText='Выйти' navLink='signin' signOut={props.signOut}/>
           <Main onEditProfile={handleEditProfileClick} 
                 onAddPlace={handleAddPlaceClick} 
                 onEditAvatar={handleEditAvatarClick} 
