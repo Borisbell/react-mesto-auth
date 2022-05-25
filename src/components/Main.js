@@ -3,7 +3,7 @@ import editButton from '../images/profile/edit-btn-icon.svg';
 import Card from "./Card";
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
 
-function Main({cards, onCardLike, onCardDelete, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onDeleteClick}) {
+function Main({cards, onCardLike, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onDeleteClick}) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
