@@ -24,7 +24,7 @@ const App = () => {
   const handleRegister = ({email, password }) => {
     return auth.register(email, password)
     .then(() => {
-      history.push('/signin');
+      setTimeout(() => {history.push('/signin')}, 3000)
     });
   }
 
@@ -46,7 +46,7 @@ const App = () => {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
     setUserData(null);
-    history.push('/signup');
+    history.push('/signin');
     }
 
   useEffect(() => {
@@ -55,13 +55,13 @@ const App = () => {
 
   useEffect(() => {
       if (loggedIn) {
-        history.push('/my-profile');
+        history.push('/');
       }
   }, [loggedIn, history]);
 
   return (
       <Switch>
-        <ProtectedRoute path="/my-profile" loggedIn={loggedIn}>
+        <ProtectedRoute exact path="/" loggedIn={loggedIn}>
             <MyProfile userData={userData} loggedIn={loggedIn} signOut={signOut}/>
         </ProtectedRoute>
         <Route path="/signin">
@@ -73,7 +73,7 @@ const App = () => {
           </div>
         </Route>
         <Route >
-          {loggedIn ? <Redirect to="/my-profile" /> : <Redirect to="/signin" />}
+          {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
         </Route>
       </Switch>
   );

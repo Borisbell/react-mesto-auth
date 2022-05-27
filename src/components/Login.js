@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Header from './Header';
+import InfoTooltip from './InfoTooltip';
 
 const Login = (props) => {
   const [formParams, setFormParams] = useState({
     email: '',
     password: '',
   });
-  const [message, setMessage] = useState('');
+  const [signupSuccess, setSignupSuccess] = useState(true);
+  const [isToolTipOpen, setIsToolTipOpen] = useState(false);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -21,8 +23,13 @@ const Login = (props) => {
     let { email, password} = formParams;
     props.handleLogin({ email, password })
     .catch(err => {
-      setMessage(err.message);
-    });
+      setSignupSuccess(false);
+      setIsToolTipOpen(true);
+    })
+  }
+
+  const handleCloseToolTip = () => {
+    setIsToolTipOpen(false)
   }
 
   return(
@@ -58,6 +65,11 @@ const Login = (props) => {
             </div>
           </form>
         </div>
+        <InfoTooltip isOpen={isToolTipOpen} 
+                   onClose={handleCloseToolTip} 
+                   success={signupSuccess}
+                   message=''  
+                   />
       </div>
   );
 }

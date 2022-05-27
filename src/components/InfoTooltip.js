@@ -14,9 +14,10 @@ function InfoTooltip(props){
         <img src={props.success ? successImage : errorImage} alt="Иконка" className="tooltip__image"/>
         <h2 className="name name_place_tooltip">{ 
           props.success ? 
-            'Вы успешно зарегистрировались!' 
-            : 
+            props.successMessage
+            : props.message!=='' ?
             `${props.message.replace(/['"]+/g, '')}, попробуйте ещё раз.`
+            : 'Что-то пошло не так! Попробуйте ещё раз.'
             }
         </h2>
       </div>

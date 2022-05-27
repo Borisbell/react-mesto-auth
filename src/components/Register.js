@@ -24,6 +24,9 @@ const Register = (props) => {
     e.preventDefault();
     let { email, password} = formParams;
     props.handleRegister({ email, password })
+      .then(() => {
+        setSignupSuccess(true);
+      })
       .catch(err => {
         setSignupSuccess(false);
         setMessage(JSON.stringify(err.message));
@@ -36,10 +39,6 @@ const Register = (props) => {
   const handleCloseToolTip = () => {
     setIsToolTipOpen(false)
   }
-
-  useEffect(() => {
-    console.log(message);
-  },[message])
 
   return (
     <div className="page">
@@ -81,6 +80,7 @@ const Register = (props) => {
       <InfoTooltip isOpen={isToolTipOpen} 
                    onClose={handleCloseToolTip} 
                    success={signupSuccess}
+                   successMessage='Вы успешно зарегистрировались!'
                    message={message}  
                    />
     </div>
