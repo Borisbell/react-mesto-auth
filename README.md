@@ -6,3 +6,5 @@
 * html
 * css: flex-box, grid, media-queries
 * js (react)
+
+[Проект на GitHub Pages](http://borisbell.github.io/react-mesto-auth/).

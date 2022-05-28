@@ -1,3 +1,5 @@
+import React from 'react';
+
 function ImagePopup({card, onClose}){
   return(
     // <div className={`popup popup_type_img-zoom ${card ? 'popup_opened' : ''}`}>

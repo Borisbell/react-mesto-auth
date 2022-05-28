@@ -40,7 +40,7 @@
 @import url(./blocks/card/__like-btn/card__like-btn.css);
 @import url(./blocks/card/__like-btn/_state/card__like-btn_state_active.css);
 @import url(./blocks/card/__delete-btn/card__delete-button.css);
-@import url(./blocks/card/__delete-btn/card__delete-button_hidden);
+@import url(./blocks/card/__delete-btn/card__delete-button_hidden.css);
 @import url(./blocks/card/__delete-btn/card__delete-button_visible.css);
 @import url(./blocks/card/__like-count/card__like-count.css);
 /* Footer */
