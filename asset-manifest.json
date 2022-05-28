@@ -9,11 +9,11 @@
   "static/media/logo.svg": "/static/media/logo.7baba3c1.svg",
   "static/media/success.svg": "/static/media/success.e38b395c.svg",
   "static/media/error.svg": "/static/media/error.4072126c.svg",
-  "static/media/index.css": "/static/media/close-icon.cb0f2bbf.svg",
+  "static/media/index.css": "/static/media/like-btn__active.302bdf76.svg",
   "static/media/spinner.gif": "/static/media/spinner.dae39213.gif",
   "static/media/ava.jpg": "/static/media/ava.b914062f.jpg",
   "static/css/main.c2dbe2a7.chunk.css.map": "/static/css/main.c2dbe2a7.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.478062fda3e5f7606a3d917a82a36c1c.js": "/precache-manifest.478062fda3e5f7606a3d917a82a36c1c.js",
+  "precache-manifest.8f04e0d7415731388132e8bf1c75fe7e.js": "/precache-manifest.8f04e0d7415731388132e8bf1c75fe7e.js",
   "service-worker.js": "/service-worker.js"
 }
