@@ -7,6 +7,7 @@ import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import ConfirmDeletePopup from "./ConfirmDeletePopup";
 import AddPlacePopup from "./AddPlacePopup";
+import Spinner from "./Spinner";
 import {api} from "../utils/Api";
 import ava from '../images/profile/ava.jpg';
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
@@ -21,11 +22,17 @@ function MyProfile(props) {
   const [deltedCardId, setDeltedCardId] = React.useState('');
   const [cards, setCards] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [dataReady, SetDataReady] = React.useState(false)
+
+  useEffect(() => {
+    SetDataReady(false)
+  }, [])
 
   useEffect(() => {
     api.getProfile()
       .then((userInfo) => {
         setCurrentUser(userInfo);
+        SetDataReady(true)
       })
       .catch(err => {
         console.log('Ошибка: ', err)
@@ -158,14 +165,14 @@ function MyProfile(props) {
       <div className="App">
         <div className="page">
           <Header loggedIn={props.loggedIn} userData={props.userData} navText='Выйти' navLink='signin' signOut={props.signOut}/>
-          <Main onEditProfile={handleEditProfileClick} 
+          {dataReady ? <Main onEditProfile={handleEditProfileClick} 
                 onAddPlace={handleAddPlaceClick} 
                 onEditAvatar={handleEditAvatarClick} 
                 onCardClick={handleCardClick} 
                 cards={cards} 
                 onCardLike={handleLike}
                 onDeleteClick={handleConfirmDeleteClick} 
-                />
+                /> : <Spinner/>}
           <Footer />
         </div>
         <EditProfilePopup isOpen={isEditProfilePopupOpen} 

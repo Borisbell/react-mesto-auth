@@ -11,6 +11,9 @@
 @import url(./blocks/header/__button/header__button.css);
 /* Paragraph */
 @import url(./blocks/paragraph/paragraph.css);
+/* Spinner */
+@import url(./blocks/spinner/spinner.css);
+@import url(./blocks/spinner/spinner__wrapper.css);
 /* Profile */
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__content/profile__content.css);
