@@ -40,48 +40,48 @@ self.__precacheManifest = [
     "url": "/static/media/ava.b914062f.jpg"
   },
   {
-    "revision": "d0b121f3a9d3d88afdfd6902d31ee9a0",
-    "url": "/static/media/Inter-Black.d0b121f3.woff"
-  },
-  {
-    "revision": "661569afe57a38e1529a775a465da20b",
-    "url": "/static/media/Inter-Black.661569af.woff2"
-  },
-  {
-    "revision": "3ac83020fe53b617b79b5e2ad66764af",
-    "url": "/static/media/Inter-Regular.3ac83020.woff"
-  },
-  {
     "revision": "dc131113894217b5031000575d9de002",
     "url": "/static/media/Inter-Regular.dc131113.woff2"
   },
   {
-    "revision": "75db5319e7e87c587019a5df08d7272c",
-    "url": "/static/media/Inter-Medium.75db5319.woff2"
+    "revision": "d0b121f3a9d3d88afdfd6902d31ee9a0",
+    "url": "/static/media/Inter-Black.d0b121f3.woff"
   },
   {
     "revision": "b2fce4ac45f3d116cd48ec8d068ab723",
     "url": "/static/media/add-btn-icon.b2fce4ac.svg"
   },
   {
-    "revision": "00b1c22a19c7a1e64f19b1fbacc3a301",
-    "url": "/static/media/like-btn.00b1c22a.svg"
+    "revision": "3ac83020fe53b617b79b5e2ad66764af",
+    "url": "/static/media/Inter-Regular.3ac83020.woff"
+  },
+  {
+    "revision": "75db5319e7e87c587019a5df08d7272c",
+    "url": "/static/media/Inter-Medium.75db5319.woff2"
   },
   {
     "revision": "cd42fe98127bee976095190bc5c9877e",
     "url": "/static/media/delete.cd42fe98.svg"
   },
   {
-    "revision": "c0638bea87a05fdfa2bb3bba2efe54e4",
-    "url": "/static/media/Inter-Medium.c0638bea.woff"
+    "revision": "302bdf76b9210a2a438f500909a8d36c",
+    "url": "/static/media/like-btn__active.302bdf76.svg"
+  },
+  {
+    "revision": "00b1c22a19c7a1e64f19b1fbacc3a301",
+    "url": "/static/media/like-btn.00b1c22a.svg"
   },
   {
     "revision": "cb0f2bbfd915a7bfa586c3a3bd2efc48",
     "url": "/static/media/close-icon.cb0f2bbf.svg"
   },
   {
-    "revision": "302bdf76b9210a2a438f500909a8d36c",
-    "url": "/static/media/like-btn__active.302bdf76.svg"
+    "revision": "661569afe57a38e1529a775a465da20b",
+    "url": "/static/media/Inter-Black.661569af.woff2"
+  },
+  {
+    "revision": "c0638bea87a05fdfa2bb3bba2efe54e4",
+    "url": "/static/media/Inter-Medium.c0638bea.woff"
   },
   {
     "revision": "e8ed637ab786a0f91a28c3bd509887ba",
